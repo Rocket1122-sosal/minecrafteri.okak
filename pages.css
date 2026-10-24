@@ -1208,3 +1208,136 @@
     animation: none !important;
   }
 }
+
+@media (max-width: 760px) {
+  .ambient-two {
+    right: 0;
+  }
+
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand status"
+      "nav nav";
+    gap: 8px;
+    height: auto;
+    min-height: 60px;
+    padding: 10px 12px;
+  }
+
+  .site-header .brand {
+    grid-area: brand;
+    min-width: 0;
+  }
+
+  .site-header .brand-name {
+    overflow: hidden;
+    font-size: clamp(12px, 4vw, 16px) !important;
+    letter-spacing: 0.03em !important;
+    text-overflow: ellipsis;
+  }
+
+  .site-header .nav {
+    grid-area: nav;
+    justify-self: center;
+  }
+
+  .site-header .nav-link {
+    padding: 8px 12px;
+  }
+
+  .server-status-pill {
+    grid-area: status;
+    justify-self: end;
+    max-width: 100%;
+    min-width: 0;
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .server-status-pill span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero {
+    margin-top: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 11.5vw, 48px);
+    letter-spacing: -2.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    justify-content: space-between;
+    min-height: 48px;
+  }
+
+  .server-ip-address {
+    min-width: 0;
+    font-size: clamp(10px, 3.3vw, 13px);
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .skin-search-input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .skin-search-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skin-search-btn {
+    width: 100%;
+  }
+
+  .server-ip-edit-form {
+    flex-wrap: wrap;
+  }
+
+  .server-ip-input {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    width: calc(100% - 20px);
+    padding: 9px 10px;
+  }
+
+  .server-status-pill {
+    gap: 6px;
+    padding: 7px 8px;
+  }
+
+  .button-copy-ip .copy-text {
+    display: none;
+  }
+
+  .server-ip-row {
+    gap: 6px;
+    padding-left: 8px;
+  }
+
+  .moments-section {
+    padding: 18px 14px;
+  }
+
+  .moment-card-caption {
+    gap: 8px;
+    padding: 14px;
+  }
+}
