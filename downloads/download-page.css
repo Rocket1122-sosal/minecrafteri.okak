@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#f1f3fa;background:radial-gradient(ellipse at 50% 0%,rgba(88,94,163,.2),transparent 50%),radial-gradient(ellipse at 0% 50%,rgba(76,49,154,.2),transparent 42%),#090b12;font-family:Inter,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+.download-shell{width:min(1250px,calc(100% - 48px));margin:auto}
+.download-header{position:sticky;top:16px;z-index:5;margin:16px auto 40px;min-height:84px;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(110deg,rgba(40,43,56,.88),rgba(14,17,25,.88));backdrop-filter:blur(22px);box-shadow:0 15px 50px rgba(0,0,0,.22)}
+.download-brand{font-family:Minecraft,"Courier New",monospace;font-weight:900;font-size:clamp(15px,2vw,22px);letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.download-nav{display:flex;gap:6px;padding:5px;border:1px solid rgba(255,255,255,.06);border-radius:17px;background:rgba(6,8,14,.25)}
+.download-nav a{padding:11px 17px;border-radius:12px;color:#9aa4bb;text-decoration:none;font-size:14px;font-weight:700}
+.download-nav a.active{color:#f1f3fa;background:rgba(255,255,255,.12)}
+.server-state{display:flex;align-items:center;gap:10px;color:#bbc4d6;font-size:12px;font-weight:700;white-space:nowrap}
+.server-state i{width:9px;height:9px;border-radius:50%;background:#a5ef78;box-shadow:0 0 14px #a5ef78}
+.download-main{padding:12px 0 80px}
+.back-link{display:inline-flex;align-items:center;gap:9px;margin:4px 0 26px;color:#a9b4cb;text-decoration:none;font-size:14px;font-weight:700}
+.back-link:hover{color:#a5ef78}
+.download-card,.guide-card,.step-card{border:1px solid rgba(255,255,255,.12);background:linear-gradient(120deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px rgba(255,255,255,.045)}
+.download-card{position:relative;overflow:hidden;border-radius:30px;padding:clamp(28px,6vw,68px);display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.65fr);gap:32px;align-items:center}
+.download-card:after{content:attr(data-mark);position:absolute;right:-10px;bottom:-65px;font-size:clamp(150px,28vw,300px);line-height:1;font-weight:900;color:rgba(255,255,255,.025);pointer-events:none}
+.eyebrow{margin:0 0 16px;color:#aab5cc;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(36px,6vw,64px);line-height:.98;letter-spacing:-.065em}
+h1 span{display:block;color:#a5ef78}
+.intro{max-width:620px;margin:24px 0 0;color:#a5aec2;font-size:15px;line-height:1.7}
+.download-actions{position:relative;z-index:1;display:grid;gap:12px}
+.download-button{min-height:62px;padding:13px 17px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid rgba(165,239,120,.27);border-radius:17px;background:rgba(165,239,120,.08);color:#f1f3fa;text-decoration:none;font:inherit;font-size:14px;font-weight:800;transition:background .18s,border-color .18s,transform .18s}
+.download-button:not([aria-disabled="true"]):hover{transform:translateY(-2px);background:rgba(165,239,120,.15);border-color:rgba(165,239,120,.5)}
+.download-button small{display:block;margin-top:4px;color:#98a4ba;font-size:11px;font-weight:500}
+.download-button[aria-disabled="true"]{opacity:.48;cursor:not-allowed}
+.button-arrow{color:#a5ef78;font-size:18px}
+.guide-heading{margin:68px 0 22px}
+.guide-heading .eyebrow{margin-bottom:12px}
+.guide-heading h2{margin:0;font-size:clamp(26px,4vw,38px);letter-spacing:-.05em}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.step-card{min-height:245px;padding:22px;border-radius:23px}
+.step-number{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:rgba(165,239,120,.13);color:#a5ef78;font-size:13px;font-weight:800}
+.step-image{height:105px;margin:17px 0;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.16);border-radius:15px;background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(255,255,255,.01));color:#768199;font-size:11px;text-align:center}
+.step-card h3{margin:0 0 8px;font-size:17px}
+.step-card p{margin:0;color:#9ca7bc;font-size:13px;line-height:1.6}
+.download-footer{margin-top:20px;padding:25px 0 32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;color:#77859e;font-size:12px}
+@media(max-width:760px){.download-shell{width:min(100% - 28px,620px)}.download-header{top:8px;margin:8px auto 28px;padding:12px 14px;min-height:70px;flex-wrap:wrap}.download-brand{font-size:14px}.download-nav{order:3;width:100%;justify-content:center}.download-nav a{padding:10px 14px}.server-state{font-size:10px}.download-card{grid-template-columns:1fr;padding:28px 22px;gap:24px}.download-actions{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.step-card{min-height:220px}.guide-heading{margin-top:50px}.download-footer{flex-direction:column;gap:8px}}

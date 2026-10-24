@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b12" />
+    <meta name="description" content="Проекты Minecrafteri — архив серверов, сборок и моментов Rocket Vanilla." />
+    <title>Minecrafteri — проекты Minecraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261023_4" />
+    <link rel="stylesheet" href="custom.css?v=20261023_4" />
+    <link rel="stylesheet" href="gallery.css?v=20261023_4" />
+    <link rel="stylesheet" href="pages.css?v=20261023_4" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <!-- Header Navigation -->
+    <header class="site-header glass">
+      <a class="brand" href="#home" aria-label="Minecrafteri — главная">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-name">minecrafteri</span>
+      </a>
+      <nav class="nav" aria-label="Главная навигация">
+        <a class="nav-link active" href="#home" aria-current="page">Главная</a>
+        <a class="nav-link" href="#rv3">Rocket Vanilla</a>
+      </nav>
+      <a class="server-status-pill" href="#server-status" title="Перейти к мониторингу онлайна">
+        <span class="status-pulse-dot" id="header-status-dot"></span>
+        <span id="header-server-online">Онлайн: проверка...</span>
+      </a>
+    </header>
+
+    <!-- Page Sliding Container -->
+    <div class="page-viewport" id="page-viewport">
+      <main class="page-track" id="page-track">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <div class="page-panel home-panel" id="home-page">
+          <!-- Hero Section -->
+          <section class="hero" id="home">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="pulse"></span> СЕРВЕР ДРУЗЕЙ</div>
+              <h1>Проекты<br /><span>Minecrafteri</span></h1>
+              <p class="hero-description">
+                Архив проектов, моментов и сборок сервера Rocket Vanilla. Миры, в которых мы исследовали, строили и создавали истории вместе.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="#rv3">Серверы Rocket Vanilla <span aria-hidden="true">↗</span></a>
+                <a class="button button-secondary" href="#moments">Моменты сервера <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+
+            <!-- Hero Image Carousel -->
+            <div id="gallery" role="region" aria-roledescription="carousel" aria-label="Галерея сервера Minecrafteri">
+              <!-- Slides Container (divs with zero user-agent margins) -->
+              <div class="gallery-slides" id="gallery-slides" aria-live="polite">
+                <div class="gallery-slide is-active" data-index="0">
+                  <img src="images/karusel/karusel1.png" alt="Путешествие по миру Minecrafteri" />
+                </div>
+                <div class="gallery-slide" data-index="1">
+                  <img src="images/karusel/karusel2.png" alt="Встречи и жизнь игроков на базе" />
+                </div>
+                <div class="gallery-slide" data-index="2">
+                  <img src="images/karusel/karusel3.png" alt="Ландшафты и исследователи в Minecraft" />
+                </div>
+                <div class="gallery-slide" data-index="3">
+                  <img src="images/karusel/karusel4.png" alt="Вечерние постройки и сияющие горизонты" />
+                </div>
+              </div>
+
+              <!-- Carousel Navigation Arrows (visible on hover) -->
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Предыдущий слайд">‹</button>
+              <button class="gallery-arrow gallery-next" type="button" aria-label="Следующий слайд">›</button>
+
+              <!-- Carousel Bottom Dots Slider (visible on hover) -->
+              <div class="gallery-footer">
+                <div class="gallery-dots" role="tablist" aria-label="Слайды галереи">
+                  <button class="gallery-dot is-active" type="button" aria-label="Слайд 1" role="tab" aria-selected="true"></button>
+                  <button class="gallery-dot" type="button" aria-label="Слайд 2" role="tab" aria-selected="false"></button>
+                  <button class="gallery-dot" type="button" aria-label="Слайд 3" role="tab" aria-selected="false"></button>
+                  <button class="gallery-dot" type="button" aria-label="Слайд 4" role="tab" aria-selected="false"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Server Status & Live Online Players Section -->
+          <section class="server-status-section" id="server-status" aria-labelledby="status-title">
+            <div class="server-status-card">
+              <div class="server-status-top">
+                <div class="server-status-meta">
+                  <div class="server-icon-container">
+                    <img class="server-favicon" id="server-favicon-img" src="images/rv-logo.png" alt="Иконка сервера" />
+                    <span class="status-indicator-dot" id="server-status-dot"></span>
+                  </div>
+                  <div class="server-meta-info">
+                    <div class="server-meta-badges">
+                      <span class="section-kicker" id="server-status-badge">СЕРВЕР ОНЛАЙН</span>
+                      <span class="server-version-badge" id="server-version-badge" style="display: none;"></span>
+                    </div>
+                    <h2 id="status-title">Rocket Vanilla — Онлайн</h2>
+                    <div class="server-motd-box" id="server-motd">Следи за онлайном и активными игроками сервера в реальном времени</div>
+                  </div>
+                </div>
+
+                <div class="server-ip-box">
+                  <span class="server-ip-label">Адрес сервера (IP):</span>
+                  <div class="server-ip-row">
+                    <code class="server-ip-address" id="server-ip-address">mc.rocketvanilla.ru</code>
+                    <button class="button-copy-ip" id="button-copy-ip" type="button" title="Скопировать IP сервера">
+                      <span class="copy-icon">📋</span>
+                      <span class="copy-text">Скопировать</span>
+                    </button>
+                    <button class="button-edit-ip" id="button-edit-ip" type="button" title="Указать свой IP сервера">
+                      <span>✎</span>
+                    </button>
+                  </div>
+                  <div class="server-ip-edit-form" id="server-ip-edit-form" style="display: none;">
+                    <input type="text" class="server-ip-input" id="server-ip-input" placeholder="например: play.server.ru или IP:порт" />
+                    <button class="button-save-ip" id="button-save-ip" type="button">Проверить</button>
+                  </div>
+                  <div class="server-preset-chips" id="server-preset-chips">
+                    <span class="chips-hint">Быстрый выбор:</span>
+                    <button class="preset-chip" type="button" data-ip="mc.rocketvanilla.ru">🚀 Rocket Vanilla</button>
+                    <button class="preset-chip" type="button" data-ip="mc.hypixel.net">👑 Hypixel</button>
+                    <button class="preset-chip" type="button" data-ip="mc.aliquam.org">👥 Сервер с игроками онлайн (Aliquam)</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Players Section -->
+              <div class="server-players-container">
+                <div class="server-players-header">
+                  <div class="players-counter-badge">
+                    <span class="players-counter-icon">👥</span>
+                    <span id="server-players-text">Онлайн: Загрузка...</span>
+                  </div>
+                  <div class="players-header-actions">
+                    <button class="button-refresh-status" id="button-refresh-status" type="button" title="Обновить статус">
+                      <span class="refresh-icon">🔄</span>
+                      <span>Обновить</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Server Privacy Notice (Shown when proxy conceals players list) -->
+                <div class="server-privacy-notice" id="server-privacy-notice" style="display: none;">
+                  <div class="notice-icon">🛡️</div>
+                  <div class="notice-body">
+                    <div class="notice-title" id="notice-title">Список ников скрыт настройками сервера</div>
+                    <div class="notice-desc" id="notice-desc">Крупные сети скрывают полный список ников в публичном пинге. Ниже показаны популярные участники сервера:</div>
+                  </div>
+                </div>
+
+                <!-- Players Grid -->
+                <div class="players-grid" id="players-grid">
+                  <!-- Populated dynamically by script.js -->
+                </div>
+
+                <!-- Live Skin Checker Box -->
+                <div class="skin-search-card" id="skin-search-card">
+                  <div class="skin-search-header">
+                    <span class="skin-search-icon">🔍</span>
+                    <span class="skin-search-title">Проверить скин любого игрока Minecraft по нику:</span>
+                  </div>
+                  <form class="skin-search-form" id="skin-search-form">
+                    <input type="text" class="skin-search-input" id="skin-search-input" placeholder="Введите любой ник (например: Notch, Technoblade, свой ник...)" />
+                    <button class="skin-search-btn" type="submit">Показать скин</button>
+                  </form>
+                  <div class="skin-preview-modal" id="skin-preview-modal" style="display: none;">
+                    <div class="skin-preview-card">
+                      <img class="skin-preview-avatar" id="skin-preview-avatar" src="" alt="Скин игрока" />
+                      <div class="skin-preview-meta">
+                        <span class="skin-preview-name" id="skin-preview-name"></span>
+                        <span class="skin-preview-status">Скин найден в официальной базе скинов Minecraft</span>
+                      </div>
+                      <button class="skin-preview-close" id="skin-preview-close" type="button" title="Закрыть">✕</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="players-empty-msg" id="players-empty-msg" style="display: none;">
+                  <p>Сейчас на сервере нет игроков. Заходи и исследуй мир первым!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Moments Section (Archive Screenshots) -->
+          <section class="moments-section" id="moments" aria-labelledby="moments-title">
+            <div class="moments-header">
+              <div class="moments-header-title">
+                <span class="section-kicker"><i class="status-dot"></i> ИЗ АРХИВА</span>
+                <h2 id="moments-title">Моменты сервера</h2>
+                <p class="section-desc">Снимки и памятные истории из миров сообщества Rocket Vanilla</p>
+              </div>
+              <span class="moments-badge-count">01 — 04</span>
+            </div>
+
+            <div class="moments-grid">
+              <!-- Moment 1 -->
+              <article class="moment-card" tabindex="0" role="button" aria-label="Открыть скриншот: Встреча игроков">
+                <img class="moment-card-img" src="images/moments/moment-meeting.png" alt="Игроки Rocket Vanilla собрались вместе на базе" loading="lazy" />
+                <div class="moment-card-overlay"></div>
+                <span class="moment-zoom-badge" aria-hidden="true">⛶</span>
+                <div class="moment-card-caption">
+                  <span class="moment-card-title">Встреча игроков</span>
+                  <time class="moment-card-date" datetime="2026-07-16">16.07.2026</time>
+                </div>
+              </article>
+
+              <!-- Moment 2 -->
+              <article class="moment-card" tabindex="0" role="button" aria-label="Открыть скриншот: На базе">
+                <img class="moment-card-img" src="images/moments/moment-netherite-base.png" alt="Игрок в незеритовой броне в комнате базы" loading="lazy" />
+                <div class="moment-card-overlay"></div>
+                <span class="moment-zoom-badge" aria-hidden="true">⛶</span>
+                <div class="moment-card-caption">
+                  <span class="moment-card-title">На базе</span>
+                  <time class="moment-card-date" datetime="2026-06-14">14.06.2026</time>
+                </div>
+              </article>
+
+              <!-- Moment 3 -->
+              <article class="moment-card" tabindex="0" role="button" aria-label="Открыть скриншот: Вечер в Энде">
+                <img class="moment-card-img" src="images/moments/moment-end-evening.png" alt="Игрок Rocket Vanilla на фоне сияющих огней" loading="lazy" />
+                <div class="moment-card-overlay"></div>
+                <span class="moment-zoom-badge" aria-hidden="true">⛶</span>
+                <div class="moment-card-caption">
+                  <span class="moment-card-title">Вечер в Энде</span>
+                  <time class="moment-card-date" datetime="2026-06-22">22.06.2026</time>
+                </div>
+              </article>
+
+              <!-- Moment 4 -->
+              <article class="moment-card" tabindex="0" role="button" aria-label="Открыть скриншот: Гасты над озером">
+                <img class="moment-card-img" src="images/moments/moment-lake-ghasts.png" alt="Два гаста над горным озером в сумерках" loading="lazy" />
+                <div class="moment-card-overlay"></div>
+                <span class="moment-zoom-badge" aria-hidden="true">⛶</span>
+                <div class="moment-card-caption">
+                  <span class="moment-card-title">Гасты над озером</span>
+                  <time class="moment-card-date" datetime="2026-06-14">14.06.2026</time>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= PAGE 2: ROCKET VANILLA ARCHIVE ================= -->
+        <div class="page-panel rv3-page" id="rv3">
+          <section class="previous-servers" aria-labelledby="servers-archive-title">
+            <div class="section-heading previous-heading">
+              <div>
+                <span class="section-kicker"><i class="status-dot"></i> АРХИВ ПРОЕКТА</span>
+                <h2 id="servers-archive-title">Серверы Rocket Vanilla</h2>
+                <p class="section-desc">Карты миров, сборки и архив прошлых сезонов</p>
+              </div>
+              <span class="heading-mark">RV · RV2 · RV3</span>
+            </div>
+
+            <!-- Server 1: RV -->
+            <article class="rv3-panel glass previous-server-panel">
+              <div class="server-scene-layer" aria-hidden="true">
+                <img class="server-hover-scene-blur" src="images/rv-scene.png" alt="" />
+                <img class="server-hover-scene" src="images/rv-scene.png" alt="" />
+              </div>
+              <div class="rv3-art">
+                <img class="rv3-logo" src="images/rv-logo.png" alt="Логотип сервера Rocket Vanilla" />
+              </div>
+              <div class="rv3-content">
+                <span class="section-kicker">ПРОШЛЫЙ СЕРВЕР</span>
+                <h2>Карта и сборка<br /><span>RV</span></h2>
+                <p>Скачай карту мира или сборку первого сервера Rocket Vanilla.</p>
+                <div class="archive-downloads">
+                  <a class="button-card" href="downloads/rv.html">На страницу скачивания ↗</a>
+                </div>
+              </div>
+              <span class="rv3-watermark" aria-hidden="true">RV</span>
+            </article>
+
+            <!-- Server 2: RV2 -->
+            <article class="rv3-panel glass previous-server-panel">
+              <div class="server-scene-layer" aria-hidden="true">
+                <img class="server-hover-scene-blur" src="images/rv2-scene.png" alt="" />
+                <img class="server-hover-scene" src="images/rv2-scene.png" alt="" />
+              </div>
+              <div class="rv3-art">
+                <img class="rv3-logo" src="images/rv2-logo.png" alt="Логотип сервера Rocket Vanilla 2" />
+              </div>
+              <div class="rv3-content">
+                <span class="section-kicker">ПРОШЛЫЙ СЕРВЕР</span>
+                <h2>Карта и сборка<br /><span>RV2</span></h2>
+                <p>Скачай карту мира или сборку второго сервера Rocket Vanilla.</p>
+                <div class="archive-downloads">
+                  <a class="button-card" href="downloads/rv2.html">На страницу скачивания ↗</a>
+                </div>
+              </div>
+              <span class="rv3-watermark" aria-hidden="true">RV2</span>
+            </article>
+
+            <!-- Server 3: RV3 (Active / Current Season) -->
+            <article class="rv3-panel glass">
+              <div class="rv3-art">
+                <div class="art-glow"></div>
+                <div class="cube cube-large" aria-hidden="true"></div>
+                <div class="cube cube-small" aria-hidden="true"></div>
+                <img class="rv3-logo" src="images/rv3-logo.png" alt="Логотип сервера RV3 в стиле Minecraft" />
+              </div>
+              <div class="rv3-content">
+                <span class="section-kicker">СКОРО НОВЫЙ СЕЗОН</span>
+                <h2>Сборка сервера<br /><span>RV3</span></h2>
+                <p>Скачай архив модов для игры на сервере. Инструкция по установке и настройке доступна на странице скачивания.</p>
+                <div class="button-group-row">
+                  <a class="button button-download" id="download-link" href="downloads/mods.rar" download>
+                    <span class="download-icon">↓</span>
+                    <span>
+                      <b id="download-title">Скачать моды</b>
+                      <small id="download-meta">RAR-архив (~71 МБ)</small>
+                    </span>
+                    <span class="download-arrow">↗</span>
+                  </a>
+                  <a class="button-card" href="downloads/rv3.html">Инструкция и сборка ↗</a>
+                </div>
+              </div>
+              <span class="rv3-watermark" aria-hidden="true">RV3</span>
+            </article>
+          </section>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="community">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark">M</span>
+        <span class="brand-name">minecrafteri</span>
+      </a>
+      <span>Закрытое сообщество игроков и создателей миров.</span>
+      <span>© <span id="year">2026</span> Minecrafteri</span>
+    </footer>
+
+    <!-- Universal Lightbox Modal -->
+    <dialog class="lightbox-dialog" id="lightbox-dialog" aria-label="Просмотр скриншота">
+      <div class="lightbox-content">
+        <div class="lightbox-header">
+          <div class="lightbox-info">
+            <span class="lightbox-title" id="lightbox-title">Скриншот</span>
+            <span class="lightbox-date" id="lightbox-date"></span>
+          </div>
+          <button class="lightbox-close-btn" id="lightbox-close-btn" type="button" aria-label="Закрыть">×</button>
+        </div>
+        <div class="lightbox-body">
+          <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev-btn" type="button" aria-label="Предыдущее изображение">‹</button>
+          <img id="lightbox-img" src="" alt="" />
+          <button class="lightbox-nav-btn lightbox-next" id="lightbox-next-btn" type="button" aria-label="Следующее изображение">›</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="script.js?v=20261023_4" defer></script>
+  </body>
+</html>

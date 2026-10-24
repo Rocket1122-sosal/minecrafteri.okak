@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Carousel & Gallery Styles — Minecrafteri
+   ========================================================================== */
+
+#gallery {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 16 / 9 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+
+/* Glowing Neon Bottom Line */
+#gallery::after {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--green, #a8f07b);
+  box-shadow: 0 0 10px rgba(168, 240, 123, 0.7), 0 3px 20px rgba(168, 240, 123, 0.5);
+  content: "";
+  pointer-events: none;
+}
+
+/* Slides Container — zero margins, zero offsets */
+#gallery-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  background: transparent !important;
+  box-sizing: border-box;
+  transform: none !important;
+}
+
+/* Perfectly Centered Images with exact 1:1 margins to edges */
+.gallery-slide img {
+  display: block !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+  background: transparent !important;
+  user-select: none;
+  -webkit-user-drag: none;
+  box-sizing: border-box;
+}
+
+.gallery-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.gallery-slide.is-leaving {
+  z-index: 1;
+  opacity: 0;
+  visibility: visible;
+}
+
+/* Navigation Arrows (show on hover) */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(10, 13, 20, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #f1f3fa;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+#gallery:hover .gallery-arrow,
+#gallery:focus-within .gallery-arrow {
+  opacity: 0.85;
+  pointer-events: auto;
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+.gallery-arrow:hover {
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.1);
+  background: rgba(168, 240, 123, 0.2);
+  border-color: rgba(168, 240, 123, 0.5);
+  color: var(--green, #a8f07b);
+  box-shadow: 0 0 14px rgba(168, 240, 123, 0.35);
+}
+
+.gallery-arrow:focus-visible {
+  outline: 2px solid var(--green, #a8f07b);
+  outline-offset: 2px;
+}
+
+/* Dots slider pill (shows on hover) */
+.gallery-footer {
+  position: absolute;
+  right: 0;
+  bottom: 14px;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#gallery:hover .gallery-dots,
+#gallery:focus-within .gallery-dots {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.25, 1),
+              background 0.25s ease,
+              border-radius 0.3s ease;
+}
+
+.gallery-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.gallery-dot.is-active {
+  width: 22px;
+  border-radius: 999px;
+  background: var(--green, #a8f07b);
+  box-shadow: 0 0 10px rgba(168, 240, 123, 0.7);
+}
+
+/* Mobile & Touch devices */
+@media (hover: none) {
+  .gallery-dots {
+    opacity: 0.9;
+    transform: none;
+    pointer-events: auto;
+  }
+  .gallery-arrow {
+    opacity: 0.8;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  #gallery {
+    aspect-ratio: 16 / 9 !important;
+  }
+  .gallery-footer {
+    bottom: 10px;
+  }
+  .gallery-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+  .gallery-prev {
+    left: 6px;
+  }
+  .gallery-next {
+    right: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-slide,
+  .gallery-slide img,
+  .gallery-dot,
+  .gallery-arrow,
+  .gallery-dots {
+    transition: none !important;
+  }
+}

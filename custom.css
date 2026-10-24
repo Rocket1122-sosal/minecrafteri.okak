@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Custom Utility & Brand Styles — Minecrafteri
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MinecraftTitle';
+  src: url('fonts/MinecraftTitle.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Brand Logo & Name */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  padding: 0 !important;
+  border: 1.5px solid rgba(168, 240, 123, 0.42) !important;
+  border-radius: 11px !important;
+  background: rgba(168, 240, 123, 0.12) !important;
+  box-shadow: 0 0 14px rgba(168, 240, 123, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  color: var(--green, #a8f07b) !important;
+  font-family: 'Minecraft', 'Silkscreen', monospace !important;
+  font-weight: 700 !important;
+  font-size: 19px !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  user-select: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: scale(1.05);
+  border-color: rgba(168, 240, 123, 0.65) !important;
+  box-shadow: 0 0 18px rgba(168, 240, 123, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.brand-name {
+  font-family: 'Minecraft', 'MinecraftTitle', 'Silkscreen', monospace !important;
+  font-size: 21px !important;
+  font-weight: normal !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #f1f3fa !important;
+  line-height: 1 !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.65), 0 0 12px rgba(168, 240, 123, 0.22) !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  user-select: none;
+}
+
+.brand:hover .brand-name {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8), 0 0 18px rgba(168, 240, 123, 0.45) !important;
+}
+
+.footer-brand .brand-mark {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  font-size: 17px !important;
+  border-radius: 9px !important;
+}
+
+.footer-brand .brand-name {
+  font-size: 17px !important;
+}
+
+.private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bdc4d5;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rv3-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  padding: 24px;
+}
+
+.rv3-art .rv3-logo {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 320px);
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5));
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+.previous-server-panel:hover .rv3-art .rv3-logo,
+.rv3-panel:hover .rv3-art .rv3-logo {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* Fallback & Helper classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
